@@ -1,0 +1,7 @@
+div(modal="imagePop", close="closeImage()", options="opts")
+	div.modal-header
+		button(type="button", class="close", ng-click="closeImage()")
+			i.icon-remove-circle
+		h3 Recent imagery of the area
+	div.modal-body
+		<img ng-src='{{imageUrl}}'>

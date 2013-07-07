@@ -1,0 +1,14 @@
+div(modal="pop4Open", close="closePop4()", options="opts")
+	div.modal-header
+		button(type="button", class="close", ng-click="close()")
+			i.icon-remove-circle
+		h3 Add a notification (step 2)
+	div.modal-body
+		p Provide some details to sign up for issues in your area
+		label E-mail address <br>
+			input(type='text', ng-model='noteEmail', placeholder='Required')
+		label Mobile Phone <br>
+			input(type='text', ng-model='notePhone', placeholder='Optional')
+		label Radius you want notifications (miles) <br>
+			select(name='type', ng-model='noteRadius', ng-options='t for t in radius')
+		button.btn(ng-click='addNotifier(); closePop4()') Submit

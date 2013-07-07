@@ -1,0 +1,36 @@
+extends layout
+
+block scripts
+	script(src='http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js')
+	script(src='/js/esri-leaflet.min.js')
+	script(src='/js/geoservices.js')
+
+	script.
+		var map;
+		map = L.map('map');
+		L.esri.basemapLayer("Topographic").addTo(map);
+		var sandiego = ["32.698965027305526", "-117.15919017791748"];
+		map.setView(sandiego, 12);
+
+
+block navbar
+	li
+		a(href='#', ng-click='openAbout()') About
+	li
+		a(href='#', ng-click='openPop1()') <i class='icon-map-marker'> </i> Report an issue
+	li
+		a(href='#', ng-click='openPop3()') <i class='icon-envelope-alt'> </i> Get a notification
+	li
+		a(href='#', ng-click='openImage()')	<i class='icon-map-marker'> </i> View imagery 
+		
+
+block body
+	div#main()
+
+		div#map(ng-style='{height:pageHeight(), width:mapWidth()}')
+	include partials/step1add
+	include partials/step2add
+	include partials/step1not
+	include partials/step2not
+	include partials/image
+	include partials/about
