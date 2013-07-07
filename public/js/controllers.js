@@ -164,11 +164,13 @@ function MapHomeCtrl($scope, $http) {
 	function createPopup(geojson, layer) {
 
 
-		// console.log(geojson)
+		console.log(geojson)
 		if (geojson.properties) {
 			var popupText = "<div style='overflow:scroll; max-width:250px; max-height:200px;'>";
 			popupText += "<h4>" + geojson.properties.Type + "</h4>";
-			popupText += "<p>" + geojson.properties.Description + "</p>";
+			if (geojson.properties.Description){
+				popupText += "<p>" + geojson.properties.Description + "</p>";
+			}
 			if (geojson.properties.ReportedBy) {
 				popupText += "<p>" + geojson.properties.ReportedBy + "</p>";
 			}

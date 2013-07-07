@@ -8,7 +8,7 @@ div(modal="pop2Open", close="closePop2()", options="opts")
 		label Type of report? <br>
 			select(name='type', ng-model='issueType', ng-options='t for t in types')
 		label Description <br>
-			textarea(rows='3')
+			textarea(rows='3', ng-model='description')
 		label Name <br>
 			input(type='text', ng-model='name', placeholder='Optional')
 		label E-mail address <br>
