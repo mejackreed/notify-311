@@ -4,7 +4,6 @@
  */
 
 var express = require('express'),
-  routes = require('./routes'),
   api = require('./routes/api');
 
 var app = module.exports = express();
@@ -30,18 +29,17 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/', routes.index);
-app.get('/page/:name', routes.pages);
-app.get('/partials/:name', routes.partials)
+app.get('/', function(req, res){
+  res.render('index');
+});
 
 // JSON API
 app.get('/api/addPoint', api.addPoint)
 app.get('/api/addNotify', api.addNotify)
-//app.post('/api/place', api.addPlace)
-//app.get('/api/name', api.name);
 
-// redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+app.get('*', function(req, res){
+  res.render('index');
+});
 
 // Start server
 

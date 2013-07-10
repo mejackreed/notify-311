@@ -15,20 +15,16 @@ body {
 	padding-top: 0px;
 	padding-bottom: 0px; 
 }
-	/*padding-top: 0px;*/
-	/*padding-left:0px;*/
-	/*left:-20px;*/
 	#main{
-		/*left:-20px;*/
 		position: absolute;
 		left:0px;
-		/*padding-left: -20px;*/
 	}
 	.navbar-fixed-top {
 		margin-bottom: 0px;
 	}
 }
 
+/* Leaflet - Locate */
 /* Compatible with Leaflet 0.6 */
 
 .leaflet-touch .leaflet-bar-part-single {

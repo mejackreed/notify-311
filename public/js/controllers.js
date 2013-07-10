@@ -2,17 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-controller('MyCtrl1', [
-	function() {
-
-	}
-])
-	.controller('MyCtrl2', [
-	function() {
-
-	}
-]);
+angular.module('myApp.controllers', [])
 
 function addPlaceCtrl($scope) {
 
@@ -64,7 +54,7 @@ function MapHomeCtrl($scope, $http) {
 
 	var featureServiceUrl = 'http://services1.arcgis.com/4wtX5xKqGfqRRwyy/arcgis/rest/services/SD311Data/FeatureServer/0'
 	var notifyServiceUrl = 'http://services.arcgis.com/nILn1H1Ns97PmrRf/ArcGIS/rest/services/Notifiers_WGS84/FeatureServer/0'
-	// var client = new Geoservices();
+	
 	var ArcGISGeoServices = new Geoservices.Geoservices({});
 
 	var featureService = new ArcGISGeoServices.FeatureService({
@@ -162,9 +152,6 @@ function MapHomeCtrl($scope, $http) {
 	}
 
 	function createPopup(geojson, layer) {
-
-
-		// console.log(geojson)
 		if (geojson.properties) {
 			var popupText = "<div style='overflow:scroll; max-width:250px; max-height:200px;'>";
 			popupText += "<h4>" + geojson.properties.Type + "</h4>";
